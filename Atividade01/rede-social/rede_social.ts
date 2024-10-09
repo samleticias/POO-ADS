@@ -142,15 +142,6 @@ class Categoria {
     removerPostagem(postagem: Postagem) : void {
         this.postagens = this.postagens.filter(p => p !== postagem);
     }
-
-    filtrarPostagensPorIdCategoria(id: number): Postagem[] {
-        return this.postagens = this.postagens.filter(p => p.categoria.id === id)
-    }
-
-    filtrarPostagensPorNomeCategoria(nome: string): Postagem[] {
-        return this.postagens = this.postagens.filter(p => p.categoria.nome === nome)
-    }
-
 }
 
 function main() {

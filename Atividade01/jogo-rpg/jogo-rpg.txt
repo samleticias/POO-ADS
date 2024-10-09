@@ -46,6 +46,7 @@ ele adicione e remova itens conforme necessário")
     - status (pendente, em progresso, concluída)
 
 - Item
+    - id
     - nome
     - descricao
     - valor
