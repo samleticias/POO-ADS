@@ -1,5 +1,4 @@
 Atividade 01 - Abstração
-Aluno(a): Sammya Letícia Valadão da Silva
 Aplicação Financeira
 
 1. Classes (Classificações) mais relevantes do texto:

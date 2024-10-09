@@ -1,74 +1,60 @@
 Atividade 01 - Abstração
-Aluno(a): Sammya Letícia Valadão da Silva
 Rede Social
 
 1. Classes (Classificações) mais relevantes do texto:
 - Usuário: dados de cadastro do usuário e postagens
-- Postagem: publicação
+- Postagem: publicações realizadas pelo usuário
 - Comentário: textos de outros usuários nas postagens
 - Curtida: likes de outros usuários nas postagens
-- Perfil
-- Categoria
-- Visibilidade
+- Categoria: classifica as postagens por nome
+- Promoção de Postagem: gerencia a visibilidade das postagens
 
-2. Atributos (Substantivos) das Classes:
+2. Atributos (Substantivos) das Classes: 
 - Usuário
     - nome
     - email
     - senha
-    - listaPostagens (lista de postagens do usuário)
+    - lista de postagens (lista de postagens do usuário)
 
 - Postagem
     - texto: descrição da postagem
     - fotos: lista de imagens
     - vídeos: lista de vídeos
-    - dataCriacao: data de criação
-    - dataEdicao: data de edição
-    - listaComentarios: lista de comentários de outros usuários nas postagens
-    - listaCurtidas: lista de usuários que curtirama postagem
+    - data de criacao: data de criação
+    - data de edicao: data de edição
+    - lista de comentarios: lista de comentários de outros usuários nas postagens
+    - lista de curtidas: lista de usuários que curtiram a postagem
+    - visibilidade: tipo de promoção (amigos, público)
 
 - Comentário
     - texto: descrição do Comentário
-    - dataCriacao: data de criação do comentário
+    - data de criacao: data de criação do comentário
     - usuario: referência ao usuário que comentou
 
 - Curtida
     - usuario: referência ao usuário que curtiu
-    - dataCurtida: data da curtida da postagem
+    - data da curtida: data da curtida da postagem
 
 - Categoria
     - nome: descrição da categoria
-    - listaPostagens: lista de postagens dentro da categoria
+    - lista de postagens: lista de postagens dentro da categoria
 
-- Visibilidade
-    - nivel (público, amigos, privado)
+- Promoção de Postagem
+    - tipo de promoção (amigos, público)
+    - data de início
+    - data de término
 
 3. Comportamentos (Métodos) das Classes:
-- Usuario:
-    - criarPostagem(): adiciona nova postagem à lista de postagens
-    - editarPostagem(postagem): edita texto, foto ou video da postagem
-    - excluirPostagem(postagem): apaga postagem removendo da lista de postagens
-    - comentar(postagem, comentario): adiciona comentario em postagem
-    - curtir(postagem): curte postagem
-    - organizarPostagens(categoria): separa postagens por categoria
+- Usuário: pode criar novas postagens, editar ou excluir postagens publicadas. Além disso, pode comentar em postagens, 
+curtir postagens e organizar suas postagens por categoria.
 
-- Postagem
-    - editarConteudo(novoTexto, novasFotos, novosVideos): editar conteudo das listas
-    - adicionarComentario(comentario): usuario adicionar comentario
-    - removerComentario(comentario): remoção de comentário
-    - adicionarCurtida(usuario): adicionar curtida de usuário
-    - removerCurtida(usuario): remover curtida de usuário
+- Postagem: permite que o usuário edite o conteudo (fotos, videos, texto), adicione ou remova comentários, 
+como também adicionar ou remover curtidas.
 
-- Comentário
-    - editarTexto(novoTexto): editar descrição do comentário
-    - excluir(): excluir comentário
+- Comentário: o usuário pode editar o texto do comentário
 
-- Curtida
-    - remover(): remover curtida
+- Curtida: registra qual usuário curtiu a postagem e quando
 
-- Categoria
-    - adicionarPostagem(postagem): adicionar postagem na categoria
-    - removerPostagem(postagem): remover postagem da categoria
+- Categoria: permite que novas postagens sejam adicionadas ou removidas de uma categoria específica
 
-- Visibilidade
-    - ajustarVisibilidade(nivel)
+- Promoção de Postagem: permite ativar ou desativar a promoção e ajustar a duração da visibilidade da postagem
