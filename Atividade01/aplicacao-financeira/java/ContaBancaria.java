@@ -4,11 +4,11 @@ import java.util.Random;
 
 class ContaBancaria {
 
-    String numeroConta;
-    double saldo;
-    String tipoConta;
-    Cliente cliente;
-    Historico historico;
+    private String numeroConta;
+    private double saldo;
+    private String tipoConta;
+    private Cliente cliente;
+    private Historico historico;
 
     public ContaBancaria(String tipoConta, Cliente cliente) {
         this.numeroConta = gerarNumeroConta();
@@ -55,4 +55,44 @@ class ContaBancaria {
             System.out.println(t);
         }
     }
+
+    public ContaBancaria() {
+    }
+
+    public String getNumeroConta() {
+        return this.numeroConta;
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public String getTipoConta() {
+        return this.tipoConta;
+    }
+
+    public void setTipoConta(String tipoConta) {
+        this.tipoConta = tipoConta;
+    }
+
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Historico getHistorico() {
+        return this.historico;
+    }
+
+    public ContaBancaria(String numeroConta, double saldo, String tipoConta, Cliente cliente, Historico historico) {
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
+        this.tipoConta = tipoConta;
+        this.cliente = cliente;
+        this.historico = historico;
+    }
+
 }

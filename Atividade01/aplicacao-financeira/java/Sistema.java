@@ -16,7 +16,7 @@ class Sistema {
 
     public ContaBancaria buscarConta(String numeroConta) {
         for (ContaBancaria conta : contas) {
-            if (conta.numeroConta.equals(numeroConta)) {
+            if (conta.getNumeroConta().equals(numeroConta)) {
                 return conta;
             }
         }
@@ -24,7 +24,7 @@ class Sistema {
     }
 
     public void excluirConta(String numeroConta) {
-        contas.removeIf(conta -> conta.numeroConta.equals(numeroConta));
+        contas.removeIf(conta -> conta.getNumeroConta().equals(numeroConta));
     }
 
     public void adicionarConta(ContaBancaria conta) {
