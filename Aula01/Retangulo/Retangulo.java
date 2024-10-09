@@ -32,4 +32,9 @@ public class Retangulo {
     public Double calcularArea(Double altura, Double largura){
         return altura * largura;
     }
+
+    public void mostraValores(String message){
+        System.out.println(message);
+        System.out.println("\n> Altura = " + altura + "\n> Largura = " + largura + "\n> Área = " + calcularArea(altura, largura));
+    }
 }
