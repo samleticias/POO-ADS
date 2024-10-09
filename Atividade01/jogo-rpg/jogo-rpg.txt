@@ -8,6 +8,7 @@ Jogo de RPG
 - Inventário: lista de itens que o personagem possui ("O inventário do personagem deve ser gerenciado pelo jogador, permitindo que
 ele adicione e remova itens conforme necessário")
 - Missão: tarefas e desafios que o personagem deve completar
+- Item: item para armazenar na lista de itens (inventário)
 
 2. Atributos (Substantivos) das Classes:
 - Personagem
@@ -24,7 +25,7 @@ ele adicione e remova itens conforme necessário")
     - dano (causado ao adversário): valor que diminui os pontos de vida do adversário
 
 - Inimigo
-    - nome do inigo
+    - nome do inimigo
     - pontos de vida: recuperação do inimigo
     - força
     - lista de habilidades: ajudam no desempenho do inimigo
@@ -43,6 +44,11 @@ ele adicione e remova itens conforme necessário")
     - descrição
     - nível de dificuldade
     - status (pendente, em progresso, concluída)
+
+- Item
+    - nome
+    - descricao
+    - valor
 
 3. Comportamentos (Métodos) das Classes:
 - Personagem: pode atacar inimigos, usar habilidades, receber dano, curar-se e gerenciar seu inventário. 
