@@ -1,0 +1,59 @@
+Atividade 01 - Abstração
+Jogo de RPG
+
+1. Classes (Classificações) mais relevantes do texto:
+- Personagem: elemento central do jogo, evoluindo em níveis e habilidades no decorrer do jogo
+- Inimigo: adversários que o personagem enfrenta
+- NPC (Personagem Não Jogável): personagens que interagem com o jogador, como vendedores e guias
+- Inventário: lista de itens que o personagem possui ("O inventário do personagem deve ser gerenciado pelo jogador, permitindo que
+ele adicione e remova itens conforme necessário")
+- Missão: tarefas e desafios que o personagem deve completar
+
+2. Atributos (Substantivos) das Classes:
+- Personagem
+    - nome do personagem
+    - pontos de vida: cura do personagem para reduzir danos dos combates
+    - força: melhora perfomance do personagem em defesa ou combates
+    - nível: personagem sobe de nível ao completar missões e tarefas
+    - lista de habilidades: ajudam na perfomance do personagem
+    - inventário: lista de itens usados para combates ou recuperação do personagem
+
+- Habilidade
+    - nome
+    - tipo (ataque, defesa): descrição da habilidade
+    - dano (causado ao adversário): valor que diminui os pontos de vida do adversário
+
+- Inimigo
+    - nome do inigo
+    - pontos de vida: recuperação do inimigo
+    - força
+    - lista de habilidades: ajudam no desempenho do inimigo
+
+- NPC (Personagem Não Jogável)
+    - nome
+    - tipo (vendedor, guia): descrição do NPC
+    - lista de itens disponíveis para vender aos personagens (se for vendedor)
+
+- Inventário
+    - lista de itens (itens que o personagem possui)
+    - capacidade máxima (número máximo de itens que pode carregar)
+
+- Missão
+    - título
+    - descrição
+    - nível de dificuldade
+    - status (pendente, em progresso, concluída)
+
+3. Comportamentos (Métodos) das Classes:
+- Personagem: pode atacar inimigos, usar habilidades, receber dano, curar-se e gerenciar seu inventário. 
+Também sobe de nível, desbloqueando novas habilidades e aumentando atributos
+
+- Habilidade: executa a habilidade e aplica efeitos ao alvo (dano, cura)
+
+- Inimigo: permite que o inimigo ataque o personagem e receba dano
+
+- NPC: pode vender itens aos personagens ou fornecer informações ao jogador
+
+- Inventário: permite que o jogador adicione ou remova itens na lista de itens e verifique a capacidade máxima do inventário
+
+- Missão: permite que o jogador inicie, conclua ou atualize o status da missão

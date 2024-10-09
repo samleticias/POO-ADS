@@ -18,7 +18,7 @@ e uma transação só pertence a um histórico de uma conta específica)
 
 - Cliente:
     - nome: nome do cliente
-    - cpf_titular: identificação única do cliente
+    - cpfTitular: identificação única do cliente
     - listaContas: lista de contas associadas ao cliente (relacionamente cliente e conta: um cliente pode ter uma ou várias contas
     de tipos diferentes)
 
@@ -38,24 +38,24 @@ e uma transação só pertence a um histórico de uma conta específica)
 
 3. Comportamentos (Métodos) das Classes:
 - ContaBancaria:
-    - depositar(valor): adiciona o valor ao saldo da conta
-    - sacar(valor): remove o valor do saldo da conta, se houver saldo suficiente (valor a ser sacado <= saldo da conta)
-    - consultarSaldo(): retorna o saldo atual da conta
-    - consultarHistorico(): mostra o histórico de transações da conta
+    - depositar: metodo recebe um valor e o adiciona ao saldo da conta
+    - sacar: metodo recebe um valor e o remove do saldo da conta, se houver saldo suficiente (valor a ser sacado <= saldo da conta)
+    - consultar saldo: retorna o saldo atual da conta
+    - consultar historico: mostra o histórico/lista de transações da conta
 
 - Cliente:
-    - abrirConta(tipoConta): cria uma nova conta para o cliente
-    - consultarContas(): retorna a lista de contas do cliente (um cliente pode ter várias contas)
+    - abrir conta: metodo recebe o tipo da conta e cria uma nova conta para o cliente
+    - consultar contas: retorna a lista de contas do cliente (um cliente pode ter várias contas de tipos diferentes)
 
 - Transacao:
-    - registrar(): salva a transação no histórico da conta (o histórico possui a lista de todas as movimentações da conta)
+    - registra transação: salva a transação no histórico da conta (o histórico possui a lista de todas as movimentações da conta)
 
 - Sistema:
-    - buscarConta(criterio): buscar contas com base em critérios como número da conta, tipo ou data de abertura
-    - adicionarConta(conta): método para adicionar uma nova conta ao sistema
-    - listarContas(): retorna uma lista de todas as contas registradas no sistema
-    - excluirConta(numeroConta): remove uma conta do sistema se não estiver em uso
+    - buscar conta: buscar contas com base em critérios como número da conta, tipo ou data de abertura
+    - adicionar conta: método que recebe uma conta para adicionar nova conta ao sistema 
+    - listar contas: retorna uma lista de todas as contas registradas no sistema
+    - excluir conta: metodo que recebe o número da conta e remove uma conta do sistema se não estiver em uso
 
 - Historico:
-    - adicionarTransacao(transacao): adiciona uma nova transação ao histórico da conta
-    - consultarTransacoes(): retorna a lista de transações registradas no histórico da conta
+    - adicionar transacao: metodo que recebe uma transação e adiciona nova transação ao histórico da conta
+    - consultar transações: retorna a lista de transações registradas no histórico da conta
