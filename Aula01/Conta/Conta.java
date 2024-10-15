@@ -44,6 +44,6 @@ public class Conta {
 
     public void mostraDadosConta(String message){
         System.out.println(message);
-        System.out.println("\n| CPF: " + cpf + "\n| Saldo da conta: R$ " + String.format("%.2f", saldo));
+        System.out.println("\n| CPF do Titular: " + cpf + "\n| Saldo da conta: R$ " + String.format("%.2f", saldo));
     }
 }
