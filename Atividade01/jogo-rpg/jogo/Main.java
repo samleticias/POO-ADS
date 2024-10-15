@@ -1,6 +1,7 @@
 package jogo;
 
 public class Main {
+
     public static void main(String[] args) {
         Personagem p1 = new Personagem("sammya", 100, 3, 2);
         Item bolaDeCristal = new Item(1, "bola de cristal", "misteriosa", 40);

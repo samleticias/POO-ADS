@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Inventario {
+
     private List<Item> itens;
     private int capacidadeMaxima;
 
@@ -27,12 +28,12 @@ public class Inventario {
             StringBuilder listaItens = new StringBuilder();
             for (Item item : itens) {
                 listaItens.append(String.format(
-                    "\n    > Item:\n" + 
-                    "    | ID: %d\n" +
-                    "    | Nome: %s\n" +
-                    "    | Descrição: %s\n" +
-                    "    | Valor: %d\n",
-                    item.getId(), item.getNome(), item.getDescricao(), item.getValor()
+                        "\n    > Item:\n"
+                        + "    | ID: %d\n"
+                        + "    | Nome: %s\n"
+                        + "    | Descrição: %s\n"
+                        + "    | Valor: %d\n",
+                        item.getId(), item.getNome(), item.getDescricao(), item.getValor()
                 ));
             }
             return listaItens.toString();

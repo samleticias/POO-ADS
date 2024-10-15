@@ -2,12 +2,11 @@ Atividade 01 - Abstração
 Aplicação Financeira
 
 1. Classes (Classificações) mais relevantes do texto:
-- ContaBancaria: dados da conta bancária
-- Cliente: dados pessoais do cliente
-- Transacao: movimentação financeira com atributos de data-hora, valor, tipo
-- Sistema: plataforma que gerencia e garante a segurança de todas as contas bancárias
-- Historico: armazena lista de todas as transações realizadas em uma conta (um histórico de uma conta pode ter várias transações
-e uma transação só pertence a um histórico de uma conta específica)
+- ContaBancaria
+- Cliente
+- Transacao
+- Sistema
+- Historico
 
 2. Atributos (Substantivos) das Classes:
 - ContaBancaria:
@@ -29,12 +28,11 @@ e uma transação só pertence a um histórico de uma conta específica)
 
 - Sistema:
     - contas: lista de todas as contas gerenciadas pelo sistema
-    - historicos: lista de históricos de transações das contas (geralmente o histórico é associado diretamente a cada conta,
+    - historicos: lista de históricos de transações das contas (o histórico é associado diretamente a cada conta,
     pois um histórico pertence a uma conta e uma conta possui um histórico de movimentações)
 
 - Historico:
-    - transacoes: lista de transações realizadas na conta (cada transação deve ser registrada com os atributos de valor, 
-    tipo (depósito ou saque), data-hora)
+    - transacoes: lista de transações realizadas na conta 
 
 3. Comportamentos (Métodos) das Classes:
 - ContaBancaria:

@@ -2,12 +2,12 @@ Atividade 01 - Abstração
 Rede Social
 
 1. Classes (Classificações) mais relevantes do texto:
-- Usuário: dados de cadastro do usuário e postagens
-- Postagem: publicações realizadas pelo usuário
-- Comentário: textos de outros usuários nas postagens
-- Curtida: likes de outros usuários nas postagens
-- Categoria: classifica as postagens por nome
-- Promoção de Postagem: gerencia a visibilidade das postagens
+- Usuário
+- Postagem
+- Comentário
+- Curtida
+- Categoria
+- Promoção de Postagem
 
 2. Atributos (Substantivos) das Classes: 
 - Usuário
@@ -20,20 +20,20 @@ Rede Social
     - texto: descrição da postagem
     - fotos: lista de imagens
     - vídeos: lista de vídeos
-    - data de criacao: data de criação
-    - data de edicao: data de edição
+    - data de criacao
+    - data de edicao
     - lista de comentarios: lista de comentários de outros usuários nas postagens
     - lista de curtidas: lista de usuários que curtiram a postagem
     - visibilidade: tipo de promoção (amigos, público)
 
 - Comentário
     - texto: descrição do Comentário
-    - data de criacao: data de criação do comentário
+    - data de criacao
     - usuario: referência ao usuário que comentou
 
 - Curtida
     - usuario: referência ao usuário que curtiu
-    - data da curtida: data da curtida da postagem
+    - data da curtida
 
 - Categoria
     - nome: descrição da categoria
@@ -46,15 +46,15 @@ Rede Social
 
 3. Comportamentos (Métodos) das Classes:
 - Usuário: pode criar novas postagens, editar ou excluir postagens publicadas. Além disso, pode comentar em postagens, 
-curtir postagens e organizar suas postagens por categoria.
+curtir postagens e organizar suas postagens por categoria
 
 - Postagem: permite que o usuário edite o conteudo (fotos, videos, texto), adicione ou remova comentários, 
-como também adicionar ou remover curtidas.
+como também adicionar ou remover curtidas
 
 - Comentário: o usuário pode editar o texto do comentário
 
 - Curtida: registra qual usuário curtiu a postagem e quando
 
-- Categoria: permite que novas postagens sejam adicionadas ou removidas de uma categoria específica
+- Categoria: novas postagens podem ser adicionadas ou removidas de uma categoria específica
 
 - Promoção de Postagem: permite ativar ou desativar a promoção e ajustar a duração da visibilidade da postagem

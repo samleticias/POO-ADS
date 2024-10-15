@@ -2,13 +2,12 @@ Atividade 01 - Abstração
 Jogo de RPG
 
 1. Classes (Classificações) mais relevantes do texto:
-- Personagem: elemento central do jogo, evoluindo em níveis e habilidades no decorrer do jogo
-- Inimigo: adversários que o personagem enfrenta
-- NPC (Personagem Não Jogável): personagens que interagem com o jogador, como vendedores e guias
-- Inventário: lista de itens que o personagem possui ("O inventário do personagem deve ser gerenciado pelo jogador, permitindo que
-ele adicione e remova itens conforme necessário")
-- Missão: tarefas e desafios que o personagem deve completar
-- Item: item para armazenar na lista de itens (inventário)
+- Personagem
+- Inimigo
+- NPC (Personagem Não Jogável)
+- Inventário
+- Missão
+- Item
 
 2. Atributos (Substantivos) das Classes:
 - Personagem
