@@ -1,7 +1,7 @@
 
 import java.util.Date;
 
-class Transacao {
+public class Transacao {
 
     private String tipo;
     private double valor;

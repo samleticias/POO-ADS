@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Historico {
+public class Historico {
 
     private List<Transacao> transacoes;
 

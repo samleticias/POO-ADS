@@ -2,7 +2,7 @@
 import java.util.List;
 import java.util.Random;
 
-class ContaBancaria {
+public class ContaBancaria {
 
     private String numeroConta;
     private double saldo;
@@ -10,12 +10,23 @@ class ContaBancaria {
     private Cliente cliente;
     private Historico historico;
 
+    public ContaBancaria() {
+    }
+
     public ContaBancaria(String tipoConta, Cliente cliente) {
         this.numeroConta = gerarNumeroConta();
         this.saldo = 0;
         this.tipoConta = tipoConta;
         this.cliente = cliente;
         this.historico = new Historico();
+    }
+
+    public ContaBancaria(String numeroConta, double saldo, String tipoConta, Cliente cliente, Historico historico) {
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
+        this.tipoConta = tipoConta;
+        this.cliente = cliente;
+        this.historico = historico;
     }
 
     private String gerarNumeroConta() {
@@ -40,11 +51,6 @@ class ContaBancaria {
         return saldo;
     }
 
-    public void mostraDadosConta(String message) {
-        System.out.println(message);
-        System.out.println("\n| Número da Conta: " + numeroConta + "\n| Saldo R$: " + String.format("%.2f", saldo));
-    }
-
     public void mostraHistorico() {
         List<Transacao> historicoTransacoes = this.historico.consultarTransacoes();
         for (Transacao transacao : historicoTransacoes) {
@@ -56,19 +62,16 @@ class ContaBancaria {
         }
     }
 
-    public ContaBancaria() {
-    }
-
     public String getNumeroConta() {
-        return this.numeroConta;
+        return numeroConta;
     }
 
     public double getSaldo() {
-        return this.saldo;
+        return saldo;
     }
 
     public String getTipoConta() {
-        return this.tipoConta;
+        return tipoConta;
     }
 
     public void setTipoConta(String tipoConta) {
@@ -76,7 +79,7 @@ class ContaBancaria {
     }
 
     public Cliente getCliente() {
-        return this.cliente;
+        return cliente;
     }
 
     public void setCliente(Cliente cliente) {
@@ -84,15 +87,7 @@ class ContaBancaria {
     }
 
     public Historico getHistorico() {
-        return this.historico;
-    }
-
-    public ContaBancaria(String numeroConta, double saldo, String tipoConta, Cliente cliente, Historico historico) {
-        this.numeroConta = numeroConta;
-        this.saldo = saldo;
-        this.tipoConta = tipoConta;
-        this.cliente = cliente;
-        this.historico = historico;
+        return historico;
     }
 
 }

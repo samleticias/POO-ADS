@@ -1,8 +1,10 @@
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-class Sistema {
+
+public class Sistema {
 
     private List<ContaBancaria> contas;
 
@@ -24,9 +26,16 @@ class Sistema {
     }
 
     public void excluirConta(String numeroConta) {
-        contas.removeIf(conta -> conta.getNumeroConta().equals(numeroConta));
+        Iterator<ContaBancaria> iterator = contas.iterator();
+        while (iterator.hasNext()) {
+            ContaBancaria conta = iterator.next();
+            if (conta.getNumeroConta().equals(numeroConta)) {
+                iterator.remove();
+                break; 
+            }
+        }
     }
-
+    
     public void adicionarConta(ContaBancaria conta) {
         contas.add(conta);
     }

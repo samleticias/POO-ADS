@@ -24,7 +24,7 @@ class Cliente {
     }
 
     public String getNome() {
-        return this.nome;
+        return nome;
     }
 
     public void setNome(String nome) {
@@ -32,7 +32,7 @@ class Cliente {
     }
 
     public String getCpf() {
-        return this.cpf;
+        return cpf;
     }
 
     public void setCpf(String cpf) {
@@ -40,7 +40,7 @@ class Cliente {
     }
 
     public List<ContaBancaria> getListaContas() {
-        return this.listaContas;
+        return listaContas;
     }
 
     public ContaBancaria abrirConta(String tipoConta) {
@@ -53,8 +53,4 @@ class Cliente {
         return listaContas;
     }
 
-    public void mostraDadosCliente(String message) {
-        System.out.println(message);
-        System.out.println("\n| CPF: " + cpf + "\n| Nome do Cliente: " + nome);
-    }
 }
