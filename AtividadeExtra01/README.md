@@ -9,32 +9,15 @@ Os atributos são características/propriedades de uma classe e os métodos são
 
 ## 03. 
 
-### Sistema em que não é importante
-- Habilidade destra --- Sistema de um hospital
-- Histórico de saúde --- Sistema de um banco
-- Quantidade de seguidores --- Sistema de uma escola
-- Saldo em conta --- Sistema de uma clínica de nutrição
-- Endereço --- Sistema de gerenciamento de tarefas (ex: Trello)
-- CPF --- Sistema de um aplicativo de músicas
-- Etnia --- Sistema de um blog
-
-### Sistema em que é moderadamente importante
-- Habilidade destra --- Sistema de escola de futebol (personalizar treinos)
-- Histórico de saúde --- Sistema de acompanhamento em academias
-- Etnia --- Sistema de pesquisa de mercado
-- Quantidade de seguidores --- Sistema de gestão de influenciadores
-- Saldo em conta --- Sistema de controle de orçamento pessoal
-- CPF --- Sistema de cadastro em programas de fidelidade (possibilidade de usar outro documento)
-- Endereço --- Sistema de registro de clientes em eventos
-
-### Sistema em que é essencial
-- Habilidade destra --- Sistema de escola de futebol
-- Histórico de saúde --- Sistema de gerenciamento de planos de saúde
-- Etnia --- Sistema de uma instituição de pesquisa como o IBGE
-- Quantidade de seguidores --- Sistema de monitoramento de redes sociais em campanhas eleitorais
-- Endereço --- Sistema de serviços de emergência
-- Saldo em conta --- Sistema de um banco
-- CPF --- Sistema de controle de crédito
+| Atributo                    | Sistema em que **não é importante**                                           | Sistema em que **é moderadamente importante**                                  | Sistema em que **é essencial**                                 |
+|-----------------------------|-------------------------------------------------------------------------------|--------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **Habilidade destra**        | Sistema de gerenciamento de estoque de uma loja de roupas                    | Sistema de treinamento de esportes competitivos                                | Sistema de escola de futebol                                   |
+| **Histórico de saúde**       | Sistema de um banco                                                          | Sistema de acompanhamento em academias                                         | Sistema de gerenciamento de planos de saúde                   |
+| **Quantidade de seguidores** | Sistema de uma escola                                                        | Rede social                                                                    | Sistema de marketing de influenciadores digitais               |
+| **Saldo em conta**           | Rede social                                                                 | Sistema de controle de orçamento pessoal                                       | Sistema de um banco                                            |
+| **Endereço**                 | Sistema de gerenciamento de tarefas (ex: Trello)                             | Sistema de registro de clientes em eventos                                     | Sistema de entrega de comida a domicílio (ex: Ifood)           |
+| **CPF**                      | Sistema de gerenciamento de estoque em um comércio                           | Sistema de cadastro em programas de fidelidade (possibilidade de usar outro documento) | Sistema de controle de crédito                                 |
+| **Etnia**                    | Sistema de um blog                                                          | Sistema de saúde pública                                                       | Sistema de uma instituição de pesquisa como o IBGE             |
 
 ## 04. 
 a) Sim, dessa forma uma pessoa poderia estar associada a outras partes do banco ou outras contas.  
