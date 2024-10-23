@@ -29,4 +29,8 @@ public class Retangulo {
         System.out.printf("O perímetro do retângulo é %.2f%n", perimetro);
     }
 
+    public boolean isQuadrado() {
+        return this.comprimento == this.largura;
+    }
+
 }
