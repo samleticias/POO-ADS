@@ -15,11 +15,12 @@
 
 ## 02. Assinale V ou F:
 
- (F) Classes são instâncias de objetos.
- (F) Classes são apenas agrupamentos de métodos.
- (V) Atributos definem o estado de um objeto.
- (F) Métodos podem ser análogos às funções e em TypeScript e podem ser escritos dentro ou fora da classe, como em C++.
- (F) Podemos ignorar o uso de tipos em TypeScript.
+><span style="color:red">(F) Classes são instâncias de objetos;</span><br>
+><span style="color:red">(F) Classes são apenas agrupamentos de métodos;</span><br>
+><span style="color:green">(V) Atributos definem o estado de um objeto;</span><br>
+><span style="color:red">(F) Métodos podem ser análogos às funções e em TypeScript e podem ser
+escritos dentro ou fora da classe, como em C++;</span><br>
+><span style="color:red">(F) Podemos ignorar o uso de tipos em TypeScript.</span><br>
 
 ## 03. Considere os elementos e assinale a alternativa correta: Teresina Equipamentos Hidráulicos, Empresa e Nome da Empresa. Na orientação a objetos, os itens acima representam, respectivamente:
 
