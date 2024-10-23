@@ -24,7 +24,7 @@ escritos dentro ou fora da classe, como em C++;</span><br>
 
 ## 03. Considere os elementos e assinale a alternativa correta: Teresina Equipamentos Hidráulicos, Empresa e Nome da Empresa. Na orientação a objetos, os itens acima representam, respectivamente:
 
-**Alternativa correta** e. Objeto, Classe e Atributo.
+**Alternativa correta:** e. Objeto, Classe e Atributo.
 
 ## 04. Dada a construção abaixo, associe os números ao elemento correspondente:
 
