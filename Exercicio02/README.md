@@ -43,5 +43,6 @@ my preffered language is TypeScript
 - f. Configure um projeto seu para que seja possível realizar depuração alterando o atributo sourceMap.
 
 >[Configuração do TypeScript](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/tsconfig.json)<br>
->[Exemplo strictNullChecks = true](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/questao7.ts)
+>[Exemplo strictNullChecks = true](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/questao7.ts)<br>
+>[Classe Professor transpilada para JavaScript](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/questao6.js)
 
