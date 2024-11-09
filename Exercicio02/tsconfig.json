@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "outDir": "./build",
+      "allowUnreachableCode": true,
+      "noImplicitAny": true,
+      "target": "ES5", 
+      "strictNullChecks": true,
+      "sourceMap": true
+    },
+    "include": ["./**/*.ts"], 
+    "exclude": ["./build"]     
+  }
+  
