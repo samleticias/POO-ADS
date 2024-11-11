@@ -44,5 +44,6 @@ my preffered language is TypeScript
 
 >[Configuração do TypeScript](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/tsconfig.json)<br>
 >[Exemplo strictNullChecks = true](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/questao7.ts)<br>
->[Classe Professor transpilada para JavaScript](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/questao6.js)
+>[Classe Professor transpilada para JavaScript](https://github.com/samleticias/POO-ADS/blob/main/Exercicio02/questao6.js)<br>
+>[Depuração de código](https://github.com/samleticias/POO-ADS/tree/main/Exercicio02/build)
 
