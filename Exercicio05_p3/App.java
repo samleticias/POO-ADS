@@ -22,6 +22,7 @@ class App {
         opcoes += "\n7 - Totalizacoes        8 - Listar contas      9 - Alterar titularidade\n";
         opcoes += "\n10 - Cadastrar cliente  11- Listar contas sem cliente\n";
         opcoes += "\n12 - Adicionar titularidade 13 - Efetuar ordem bancária\n";
+        opcoes += "\n14 - Listar contas de um cliente\n";
         opcoes += "\n0 - Sair\n\n";
         opcoes += "> Escolha uma das opções acima: ";
         return opcoes;
@@ -86,6 +87,23 @@ class App {
         Cliente cliente = new Cliente(id, nome, cpf, dataNascimento);
         banco.inserirCliente(cliente);
         System.out.print("\nCliente de cpf " + cpf + " cadastrado com sucesso!");
+    }
+
+    void listarContasCliente() {
+        System.out.println("\n>>> Listar contas de um cliente específico <<<\n");
+
+        Cliente cliente = consultarCliente();
+
+        List<Conta> contas = banco.buscarContasPorCliente(cliente);
+
+        if (contas.isEmpty()) {
+            System.out.println("Nenhuma conta encontrada para o cliente " + cliente.nome);
+        } else {
+            System.out.println("Contas do cliente " + cliente.nome + " (" + cliente.cpf + "):");
+            for (Conta conta : contas) {
+                System.out.println("- Conta Nº: " + conta.numero + ", Saldo: " + conta.saldo);
+            }
+        }
     }
 
     void alterarTitularidade() {
@@ -237,6 +255,10 @@ class App {
 
                 case "13":
                     ordemBancaria();
+                    break;
+
+                case "14":
+                    listarContasCliente();
                     break;
             }
             pausar();

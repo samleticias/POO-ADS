@@ -131,6 +131,16 @@ class Banco {
         }
     }
 
+    public List<Conta> buscarContasPorCliente(Cliente cliente) {
+        List<Conta> contasCliente = new ArrayList<>();
+        for (Conta conta : contas) {
+            if (conta.cliente.equals(cliente)) {
+                contasCliente.add(conta);
+            }
+        }
+        return contasCliente;
+    }
+
     void efetuarOrdemBancaria(String numeroOrigem, List<String> contasDestino, double valorPorTransferencia) {
         Conta contaOrigem = consultarConta(numeroOrigem);
 
@@ -186,13 +196,6 @@ class Banco {
         }
     }
 
-    // void transferir(String numeroCredito, String numeroDebito, double valor) {
-    //     Conta contaCredito = consultar(numeroCredito);
-    //     Conta contaDebito = consultar(numeroDebito);
-    //     if (contaCredito != null && contaDebito != null) {
-    //         contaCredito.transferir(contaDebito, valor);
-    //     }
-    // }
     void transferir(String numeroCredito, String numeroDebito, double valor) {
         Conta contaCredito = consultarConta(numeroCredito);
         Conta contaDebito = consultarConta(numeroDebito);
@@ -206,9 +209,8 @@ class Banco {
             return;
         }
 
-        // contaDebito.saldo -= valor;
-        // contaCredito.saldo += valor;
-        contaCredito.transferir(contaDebito, valor);
+        contaDebito.saldo -= valor;
+        contaCredito.saldo += valor;
 
         System.out.println("Transferência de R$" + valor + " realizada com sucesso!");
     }
