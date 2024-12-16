@@ -16,14 +16,13 @@ class App {
     }
 
     String menu() {
-        String opcoes = "\n================== APP Banco ==================\n";
-        opcoes += "\n1 - Cadastrar conta  2 - Consultar conta    3 - Sacar\n";
-        opcoes += "\n4 - Depositar           5 - Excluir conta      6 - Transferir\n";
-        opcoes += "\n7 - Totalizacoes        8 - Listar contas      9 - Alterar titularidade\n";
-        opcoes += "\n10 - Cadastrar cliente  11- Listar contas sem cliente\n";
-        opcoes += "\n12 - Adicionar titularidade 13 - Efetuar ordem bancária\n";
-        opcoes += "\n14 - Listar contas de um cliente\n";
-        opcoes += "\n0 - Sair\n\n";
+        String opcoes = "\n=================================== APP Banco ===================================\n";
+        opcoes += "\n1 - Cadastrar conta          2 - Consultar conta              3 - Sacar\n";
+        opcoes += "\n4 - Depositar                5 - Excluir conta                6 - Transferir\n";
+        opcoes += "\n7 - Totalizacoes             8 - Listar contas                9 - Alterar titularidade\n";
+        opcoes += "\n10 - Cadastrar cliente       11- Listar contas sem cliente    12 - Adicionar titularidade\n";
+        opcoes += "\n13 - Efetuar ordem bancária  14 - Listar contas de um cliente 15 - Excluir cliente\n";
+        opcoes += "\n16 - Listar clientes         0 - Sair\n\n";
         opcoes += "> Escolha uma das opções acima: ";
         return opcoes;
     }
@@ -52,7 +51,7 @@ class App {
         banco.atribuirTitularidade(numero, cliente);
     }
 
-    void listarContas() {
+    void listarContasSemCliente() {
         banco.listarContasSemCliente();
     }
 
@@ -93,7 +92,6 @@ class App {
         System.out.println("\n>>> Listar contas de um cliente específico <<<\n");
 
         Cliente cliente = consultarCliente();
-
         List<Conta> contas = banco.buscarContasPorCliente(cliente);
 
         if (contas.isEmpty()) {
@@ -139,6 +137,15 @@ class App {
         }
     }
 
+    void listarClientes() {
+        if (banco.clientes.size() == 0) {
+            System.out.println("\nNenhuma cliente encontrado");
+        } else {
+            System.out.println("\n>>> Clientes cadastrados <<<");
+            System.out.println(banco.exibeClientes(banco.clientes));
+        }
+    }
+
     void sacar() {
         Conta contaProcurada = consultarConta();
         System.out.print("Informe o valor que deseja sacar: ");
@@ -155,9 +162,14 @@ class App {
         contaProcurada.depositar(valor);
     }
 
-    void excluir() {
+    void excluirConta() {
         Conta contaProcurada = consultarConta();
         banco.excluirConta(contaProcurada.numero);
+    }
+
+    void excluirCliente() {
+        Cliente clienteProcurado = consultarCliente();
+        banco.excluirCliente(clienteProcurado.cpf);
     }
 
     void transferir() {
@@ -217,7 +229,7 @@ class App {
                     break;
 
                 case "5":
-                    excluir();
+                    excluirConta();
                     break;
 
                 case "6":
@@ -246,7 +258,7 @@ class App {
                     break;
 
                 case "11":
-                    listarContas();
+                    listarContasSemCliente();
                     break;
 
                 case "12":
@@ -259,6 +271,14 @@ class App {
 
                 case "14":
                     listarContasCliente();
+                    break;
+
+                case "15":
+                    excluirCliente();
+                    break;
+
+                case "16":
+                    listarClientes();
                     break;
             }
             pausar();

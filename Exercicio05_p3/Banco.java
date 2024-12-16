@@ -1,4 +1,5 @@
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -241,6 +242,16 @@ class Banco {
         String relatorio = "";
         for (Conta c : contas) {
             relatorio += "\n> Número da conta: " + c.numero + "\n> Saldo R$: " + c.saldo + "\n";
+        }
+        return relatorio;
+    }
+
+    String exibeClientes(ArrayList<Cliente> clientes) {
+        String relatorio = "";
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        for (Cliente c : clientes) {
+            String dataFormatada = formatador.format(c.dataNascimento);
+            relatorio += "\n> ID Cliente: " + c.id + "\n> Nome: " + c.nome + "\n> CPF: " + c.cpf + "\n> Data de Nascimento: " + dataFormatada + "\n";
         }
         return relatorio;
     }
