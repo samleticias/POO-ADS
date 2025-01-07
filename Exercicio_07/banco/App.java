@@ -29,8 +29,8 @@ class App {
     }
 
     public void renderJuros() {
-        System.out.println("Qual o número da conta? ");
-        String numero = input.next();
+        System.out.print("Qual o número da conta? ");
+        String numero = input.nextLine();
         banco.renderJuros(numero);
     }
 
