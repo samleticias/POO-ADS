@@ -1,5 +1,10 @@
 package banco;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -23,9 +28,31 @@ class App {
         opcoes += "\n7 - Totalizacoes             8 - Listar contas                9 - Alterar titularidade\n";
         opcoes += "\n10 - Cadastrar cliente       11- Listar contas sem cliente    12 - Adicionar titularidade\n";
         opcoes += "\n13 - Efetuar ordem bancária  14 - Listar contas de um cliente 15 - Excluir cliente\n";
-        opcoes += "\n16 - Listar clientes         17 - Render juros                0 - Sair\n\n";
+        opcoes += "\n16 - Listar clientes         17 - Render juros                18 - Usar crédito estudantil\n";
+        opcoes += "\n0 - Sair\n\n";
         opcoes += "> Escolha uma das opções acima: ";
         return opcoes;
+    }
+
+    public void usarCreditoEstudantil() {
+        System.out.print("Informe o número da conta estudantil: ");
+        String numero = input.nextLine();
+
+        Conta conta = banco.consultarConta(numero);
+        if (conta instanceof ContaEstudantil) {
+            System.out.print("Informe o valor do crédito a ser usado: ");
+            double valor = input.nextDouble();
+            input.nextLine();
+
+            ContaEstudantil contaEstudantil = (ContaEstudantil) conta;
+            if (contaEstudantil.usarCreditoEstudantil(valor)) {
+                System.out.println("\nCrédito usado com sucesso! Saldo atualizado: R$ " + contaEstudantil.getSaldo());
+            } else {
+                System.out.println("\nErro! Valor excede o limite disponível");
+            }
+        } else {
+            System.out.println("\nA conta informada não é uma conta estudantil");
+        }
     }
 
     public void renderJuros() {
@@ -64,7 +91,7 @@ class App {
 
     public void inserirConta() {
         System.out.println("\n>>> Cadastrar conta <<<\n");
-        System.out.print("Qual o tipo da conta? (C/CP): ");
+        System.out.print("Qual o tipo da conta? (C/CP/CI/CE): ");
         String tipoConta = input.nextLine();
         System.out.print("Informe o número da conta: ");
         String numero = input.nextLine();
@@ -76,6 +103,20 @@ class App {
             Poupanca poupanca = new Poupanca(taxaJuros, numero, 0);
             banco.inserirConta(poupanca);
             System.out.println("\nConta poupança de número " + numero + " cadastrada com sucesso!");
+        } else if (tipoConta.equalsIgnoreCase("CI")) {
+            System.out.print("Taxa de desconto da conta: ");
+            double taxaDesconto = input.nextDouble();
+            input.nextLine();
+            ContaImposto contaImposto = new ContaImposto(numero, 0, taxaDesconto);
+            banco.inserirConta(contaImposto);
+            System.out.println("\nConta imposto de número " + numero + " cadastrada com sucesso!");
+        } else if (tipoConta.equalsIgnoreCase("CE")) {
+            System.out.print("Informe o limite de crédito estudantil: ");
+            double limiteCredito = input.nextDouble();
+            input.nextLine();
+            ContaEstudantil contaEstudantil = new ContaEstudantil(numero, 0, limiteCredito);
+            banco.inserirConta(contaEstudantil);
+            System.out.println("\nConta estudantil de número " + numero + " cadastrada com sucesso!");
         } else {
             Conta conta = new Conta(numero, 0);
             banco.inserirConta(conta);
@@ -203,6 +244,62 @@ class App {
         banco.transferir(contaCredito, contaDebito, valor);
     }
 
+    public void salvarContas() throws IOException {
+        File file = new File("C:\\Users\\sammy\\Downloads\\poo-ads-atividades\\Exercicio_07\\banco\\contas.txt");
+        FileWriter fileWriter = new FileWriter(file);
+
+        for (Conta conta : banco.getContas()) {
+            if (conta instanceof Poupanca) {
+                fileWriter.write(conta.getNumero() + "; " + conta.getSaldo() + "; CP" + "; "
+                        + ((Poupanca) conta).getTaxaJuros() + "\n");
+            } else if (conta instanceof ContaImposto) {
+                fileWriter.write(conta.getNumero() + "; " + conta.getSaldo() + "; CI" + "; "
+                        + ((ContaImposto) conta).getTaxaDesconto() + "\n");
+            } else if (conta instanceof ContaEstudantil) {
+                fileWriter.write(conta.getNumero() + "; " + conta.getSaldo() + "; CE" + "; "
+                        + ((ContaEstudantil) conta).getLimiteEstudantil() + "\n");
+            } else {
+                fileWriter.write(conta.getNumero() + "; " + conta.getSaldo() + "; C\n");
+            }
+        }
+
+        fileWriter.close();
+    }
+
+    public void lerContas() throws IOException {
+        File file = new File("C:\\Users\\sammy\\Downloads\\poo-ads-atividades\\Exercicio_07\\banco\\contas.txt");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        String linha = bufferedReader.readLine();
+
+        while (linha != null) {
+            String[] partes = linha.split("; ");
+            String numero = partes[0];
+            double saldo = Double.parseDouble(partes[1]);
+            String tipo = partes[2];
+            if (tipo.equals("CP")) {
+                double taxaJuros = Double.parseDouble(partes[3]);
+                Poupanca poupanca = new Poupanca(taxaJuros, numero, saldo);
+                banco.inserirConta(poupanca);
+            } else if (tipo.equals("CI")) {
+                double taxaDesconto = Double.parseDouble(partes[3]);
+                ContaImposto contaImposto = new ContaImposto(numero, saldo, taxaDesconto);
+                banco.inserirConta(contaImposto);
+            } else if (tipo.equals("CE")) {
+                double limiteEstudantil = Double.parseDouble(partes[3]);
+                ContaEstudantil contaEstudantil = new ContaEstudantil(numero, saldo, limiteEstudantil);
+                banco.inserirConta(contaEstudantil);
+            } else {
+                Conta conta = new Conta(numero, saldo);
+                banco.inserirConta(conta);
+            }
+            linha = bufferedReader.readLine();
+        }
+
+        fileReader.close();
+    }
+
     public void limparTela() {
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -216,11 +313,12 @@ class App {
         input.nextLine();
     }
 
-    public void executar() throws ParseException {
+    public void executar() throws ParseException, IOException {
         do {
             limparTela();
             System.out.print(menu());
             opcao = input.nextLine();
+            lerContas();
 
             switch (opcao) {
                 case "1":
@@ -302,14 +400,19 @@ class App {
                 case "17":
                     renderJuros();
                     break;
+
+                case "18":
+                    usarCreditoEstudantil();
+                    break;
             }
             pausar();
 
         } while (!opcao.equals("0"));
+        salvarContas();
         System.out.println("Aplicação finalizada");
     }
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, IOException {
         App app = new App();
         app.executar();
     }

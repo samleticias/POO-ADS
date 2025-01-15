@@ -10,10 +10,15 @@ public class Poupanca extends Conta {
     }
 
     public void renderJuros() {
-        this.depositar(this.getSaldo() * this.getTaxa() / 100);
+        this.depositar(this.getSaldo() * this.getTaxaJuros() / 100);
     }
 
-    public double getTaxa() {
+    public double getTaxaJuros() {
         return this.taxaJuros;
+    }
+
+    @Override
+    public String mostraDados() {
+        return super.mostraDados() + "\n> Taxa de Juros: " + taxaJuros + " %";
     }
 }
