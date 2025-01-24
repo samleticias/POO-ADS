@@ -2,8 +2,8 @@
 
 ### 1) Enumere os 3 tipos mais comuns de tratamento de erros e exemplifique com códigos seus ou pesquisados na internet.
 
-### 1. Desconsiderar a operação
-### Exemplo:
+#### 1. Desconsiderar a operação
+#### Exemplo:
 
 ```java
     void depositar(double valor){
@@ -13,8 +13,8 @@
     }
 ```
 
-### 2. Exibir uma mensagem de erro
-### Exemplo:
+#### 2. Exibir uma mensagem de erro
+#### Exemplo:
 
 ```java
     void depositar(double valor){
@@ -26,8 +26,8 @@
     }
 ```
 
-### 3. Retornar um código de erro:
-### Exemplo:
+#### 3. Retornar um código de erro:
+#### Exemplo:
 
 ```java
     boolean sacar(double valor){
@@ -50,4 +50,4 @@ e mensagens detalhadas podem expor informações sensíveis, enquanto genéricas
 3. Retornar um código de erro:
  Códigos de erro requerem que os desenvolvedores conheçam seu significado, criando dependência da documentação.
 
-## [Questões 3, 4 e 5](https://github.com/samleticias/POO-ADS/blob/main/Exercicio_08/Questoes3a5.java)<br>
+### [Questões 3, 4 e 5](https://github.com/samleticias/POO-ADS/blob/main/Exercicio_08/Questoes3a5.java)<br>
